@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: pyGPB
+Version: 0.0.1
+Summary: pyGPB Python Package
+Home-page: UNKNOWN
+Author: Mark Rotchell
+Author-email: <MarkRotchell@gmail.com>
+License: UNKNOWN
+Keywords: python,Generalised Poisson Binomial Distribution,GPB
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Data Scientists
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+
+Python package for dealing with Generalised Poisson Binomial random variables
+
