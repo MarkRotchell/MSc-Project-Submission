@@ -1,0 +1,899 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>GPB &mdash; pyGPB 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="LFGPB" href="LFGPB.html" />
+    <link rel="prev" title="Welcome to pyGPB’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pyGPB
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to pyGPB’s documentation!</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GPB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LFGPB.html">LFGPB</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyGPB</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>GPB</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/GPB.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gpb">
+<h1>GPB<a class="headerlink" href="#gpb" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyGPB.GPB">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pyGPB.</span></span><span class="sig-name descname"><span class="pre">GPB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">probs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">failure_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_GPU</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefer_speed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">scipy.stats._distn_infrastructure.rv_sample</span></code></p>
+<p>A Generalised Poisson Binomial random variable.</p>
+<p>Distribution paramters can be supplied in either 2-parameter (p, w) or 3-parameter (p, w_s, w_f) form:</p>
+<p><strong>2-Parameter Form</strong>:</p>
+<p>Requires probs and weights. Weights should be non-zero. An event failure is assumed to have zero weight.</p>
+<p><strong>3-Parameter Form</strong>:</p>
+<p>Requires probs, weights and failure_weights. Success and Failure weights for each event must be different.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>probs</strong> (1D <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> (or other array-like) of float) – Success probabilities. Must all be between 0 and 1 (exclusive)</p></li>
+<li><p><strong>weights</strong> (1D <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> (or other array-like) of int) – Success weights. If failure_weights is not provided then must all be non-zero</p></li>
+<li><p><strong>failure_weights</strong> (1D <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> (or other array-like) of int, optional) – Failure weights. If provided then must be different to weights (elementwise)</p></li>
+<li><p><strong>method</strong> (string, callable or <code class="docutils literal notranslate"><span class="pre">None</span></code>, optional) – <p>The function used to compute the pmf vector. If <code class="docutils literal notranslate"><span class="pre">None</span></code> is provided, then the appropriate function will
+be chosen depending on the other parameters. If a callable is provided then it will be assumed to be able to
+compute the pmf vector of the GPB with parameters (probs, weights). If string is passed then the function is
+found by looking up in each sub-module’s <code class="xref py py-data docutils literal notranslate"><span class="pre">_available_methods</span></code> dict.</p>
+<div class="line-block">
+<div class="line">Currently Available GPU Method strings:</div>
+</div>
+<ul>
+<li><p>’DP_CUDA’: <code class="xref py py-func docutils literal notranslate"><span class="pre">_GPB_DP_CUDA()</span></code></p></li>
+<li><p>’DP_DC_FFT_CUDA’: <code class="xref py py-func docutils literal notranslate"><span class="pre">_GPB_DP_DC_FFT_CUDA()</span></code></p></li>
+<li><p>’Fastest_CUDA’: <code class="xref py py-func docutils literal notranslate"><span class="pre">_GPB_Fastest_CUDA()</span></code></p></li>
+</ul>
+<div class="line-block">
+<div class="line">Currently Available CPU Method strings:</div>
+</div>
+<ul>
+<li><p>’Naive’: <code class="xref py py-func docutils literal notranslate"><span class="pre">_GPB_Naive()</span></code></p></li>
+<li><p>’CF’: <code class="xref py py-func docutils literal notranslate"><span class="pre">_GPB_CF()</span></code></p></li>
+<li><p>’DP’: <code class="xref py py-func docutils literal notranslate"><span class="pre">_GPB_DP()</span></code></p></li>
+<li><p>’FFT’: <code class="xref py py-func docutils literal notranslate"><span class="pre">_GPB_DC_FFT()</span></code></p></li>
+<li><p>’Fastest_CPU’: <code class="xref py py-func docutils literal notranslate"><span class="pre">_GPB_DP_DC_FFT_Combo()</span></code></p></li>
+</ul>
+</p></li>
+<li><p><strong>allow_GPU</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether pyGPB should allow GPU methods if available.</p></li>
+<li><p><strong>prefer_speed</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to prioritise the faster FFT methods, accepting the relative-error issues in the tail.
+If false then will always use dynamic-programming methods which may be slower for larger N and M</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.cdf">
+<span class="sig-name descname"><span class="pre">cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cumulative distribution function of the given RV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>array_like</em><em>, </em><em>int</em>) – Quantiles.</p></li>
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Location parameter (default=0).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>cdf</strong> – Cumulative distribution function evaluated at <cite>k</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyGPB.GPB.cdf_vec">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">cdf_vec</span></span><a class="headerlink" href="#pyGPB.GPB.cdf_vec" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Cumulative Distribution Function in vector form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the cdf vector.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> (or array like). 1D, dtype= <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.float64</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.entropy">
+<span class="sig-name descname"><span class="pre">entropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.entropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Differential entropy of the RV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Location parameter (default=0).</p></li>
+<li><p><strong>scale</strong> (<em>array_like</em><em>, </em><em>optional</em><em>  (</em><em>continuous distributions only</em><em>)</em><em></em>) – Scale parameter (default=1).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Entropy is defined base <cite>e</cite>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">drv</span> <span class="o">=</span> <span class="n">rv_discrete</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">drv</span><span class="o">.</span><span class="n">entropy</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">2.0</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.expect">
+<span class="sig-name descname"><span class="pre">expect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conditional</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxcount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.expect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate expected value of a function with respect to the distribution
+for discrete distribution by numerical summation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>callable</em><em>, </em><em>optional</em>) – Function for which the expectation value is calculated.
+Takes only one argument.
+The default is the identity mapping f(k) = k.</p></li>
+<li><p><strong>args</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Shape parameters of the distribution.</p></li>
+<li><p><strong>loc</strong> (<em>float</em><em>, </em><em>optional</em>) – Location parameter.
+Default is 0.</p></li>
+<li><p><strong>lb</strong> (<em>int</em><em>, </em><em>optional</em>) – Lower and upper bound for the summation, default is set to the
+support of the distribution, inclusive (<code class="docutils literal notranslate"><span class="pre">lb</span> <span class="pre">&lt;=</span> <span class="pre">k</span> <span class="pre">&lt;=</span> <span class="pre">ub</span></code>).</p></li>
+<li><p><strong>ub</strong> (<em>int</em><em>, </em><em>optional</em>) – Lower and upper bound for the summation, default is set to the
+support of the distribution, inclusive (<code class="docutils literal notranslate"><span class="pre">lb</span> <span class="pre">&lt;=</span> <span class="pre">k</span> <span class="pre">&lt;=</span> <span class="pre">ub</span></code>).</p></li>
+<li><p><strong>conditional</strong> (<em>bool</em><em>, </em><em>optional</em>) – If true then the expectation is corrected by the conditional
+probability of the summation interval. The return value is the
+expectation of the function, <cite>func</cite>, conditional on being in
+the given interval (k such that <code class="docutils literal notranslate"><span class="pre">lb</span> <span class="pre">&lt;=</span> <span class="pre">k</span> <span class="pre">&lt;=</span> <span class="pre">ub</span></code>).
+Default is False.</p></li>
+<li><p><strong>maxcount</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximal number of terms to evaluate (to avoid an endless loop for
+an infinite sum). Default is 1000.</p></li>
+<li><p><strong>tolerance</strong> (<em>float</em><em>, </em><em>optional</em>) – Absolute tolerance for the summation. Default is 1e-10.</p></li>
+<li><p><strong>chunksize</strong> (<em>int</em><em>, </em><em>optional</em>) – Iterate over the support of a distributions in chunks of this size.
+Default is 32.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>expect</strong> – Expected value.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>For heavy-tailed distributions, the expected value may or
+may not exist,
+depending on the function, <cite>func</cite>. If it does exist, but the
+sum converges
+slowly, the accuracy of the result may be rather low. For instance, for
+<code class="docutils literal notranslate"><span class="pre">zipf(4)</span></code>, accuracy for mean, variance in example is only 1e-5.
+increasing <cite>maxcount</cite> and/or <cite>chunksize</cite> may improve the result,
+but may also make zipf very slow.</p>
+<p>The function is not vectorized.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.freeze">
+<span class="sig-name descname"><span class="pre">freeze</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.freeze" title="Permalink to this definition">¶</a></dt>
+<dd><p>Freeze the distribution for the given arguments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution.  Should include all
+the non-optional arguments, may include <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">scale</span></code>.</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution.  Should include all
+the non-optional arguments, may include <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">scale</span></code>.</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution.  Should include all
+the non-optional arguments, may include <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">scale</span></code>.</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution.  Should include all
+the non-optional arguments, may include <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">scale</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>rv_frozen</strong> – The frozen distribution.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>rv_frozen instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.interval">
+<span class="sig-name descname"><span class="pre">interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.interval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Confidence interval with equal areas around the median.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>alpha</strong> (<em>array_like of float</em>) – Probability that an rv will be drawn from the returned range.
+Each value should be in the range [0, 1].</p></li>
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – location parameter, Default is 0.</p></li>
+<li><p><strong>scale</strong> (<em>array_like</em><em>, </em><em>optional</em>) – scale parameter, Default is 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>a, b</strong> – end-points of range that contain <code class="docutils literal notranslate"><span class="pre">100</span> <span class="pre">*</span> <span class="pre">alpha</span> <span class="pre">%</span></code> of the rv’s
+possible values.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray of float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.isf">
+<span class="sig-name descname"><span class="pre">isf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.isf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse survival function (inverse of <cite>sf</cite>) at q of the given RV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> (<em>array_like</em>) – Upper tail probability.</p></li>
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Location parameter (default=0).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>k</strong> – Quantile corresponding to the upper tail probability, q.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray or scalar</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.logcdf">
+<span class="sig-name descname"><span class="pre">logcdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.logcdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log of the cumulative distribution function at k of the given RV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>array_like</em><em>, </em><em>int</em>) – Quantiles.</p></li>
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Location parameter (default=0).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>logcdf</strong> – Log of the cumulative distribution function evaluated at k.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.logpmf">
+<span class="sig-name descname"><span class="pre">logpmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.logpmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log of the probability mass function at k of the given RV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>array_like</em>) – Quantiles.</p></li>
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Location parameter. Default is 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>logpmf</strong> – Log of the probability mass function evaluated at k.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.logsf">
+<span class="sig-name descname"><span class="pre">logsf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.logsf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log of the survival function of the given RV.</p>
+<p>Returns the log of the “survival function,” defined as 1 - <cite>cdf</cite>,
+evaluated at <cite>k</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>array_like</em>) – Quantiles.</p></li>
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Location parameter (default=0).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>logsf</strong> – Log of the survival function evaluated at <cite>k</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.mean">
+<span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of the distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – location parameter (default=0)</p></li>
+<li><p><strong>scale</strong> (<em>array_like</em><em>, </em><em>optional</em>) – scale parameter (default=1)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>mean</strong> – the mean of the distribution</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.median">
+<span class="sig-name descname"><span class="pre">median</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.median" title="Permalink to this definition">¶</a></dt>
+<dd><p>Median of the distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Location parameter, Default is 0.</p></li>
+<li><p><strong>scale</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Scale parameter, Default is 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>median</strong> – The median of the distribution.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">rv_discrete.ppf</span></code></dt><dd><p>Inverse of the CDF</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.moment">
+<span class="sig-name descname"><span class="pre">moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.moment" title="Permalink to this definition">¶</a></dt>
+<dd><p>n-th order non-central moment of distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em><em>, </em><em>n &gt;= 1</em>) – Order of moment.</p></li>
+<li><p><strong>arg1</strong> (<em>float</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg2</strong> (<em>float</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg3</strong> (<em>float</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>...</strong> (<em>float</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – location parameter (default=0)</p></li>
+<li><p><strong>scale</strong> (<em>array_like</em><em>, </em><em>optional</em>) – scale parameter (default=1)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.pmf">
+<span class="sig-name descname"><span class="pre">pmf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.pmf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability mass function at k of the given RV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>array_like</em>) – Quantiles.</p></li>
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Location parameter (default=0).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>pmf</strong> – Probability mass function evaluated at k</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyGPB.GPB.pmf_vec">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">pmf_vec</span></span><a class="headerlink" href="#pyGPB.GPB.pmf_vec" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full Probability Mass vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the pmf vector.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> (or array like). 1D, dtype= <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.float64</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.ppf">
+<span class="sig-name descname"><span class="pre">ppf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.ppf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Percent point function (inverse of <cite>cdf</cite>) at q of the given RV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> (<em>array_like</em>) – Lower tail probability.</p></li>
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Location parameter (default=0).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>k</strong> – Quantile corresponding to the lower tail probability, q.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyGPB.GPB.random_state">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">random_state</span></span><a class="headerlink" href="#pyGPB.GPB.random_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the generator object for generating random variates.</p>
+<p>If <cite>seed</cite> is None (or <cite>np.random</cite>), the <cite>numpy.random.RandomState</cite>
+singleton is used.
+If <cite>seed</cite> is an int, a new <code class="docutils literal notranslate"><span class="pre">RandomState</span></code> instance is used,
+seeded with <cite>seed</cite>.
+If <cite>seed</cite> is already a <code class="docutils literal notranslate"><span class="pre">Generator</span></code> or <code class="docutils literal notranslate"><span class="pre">RandomState</span></code> instance then
+that instance is used.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.rvs">
+<span class="sig-name descname"><span class="pre">rvs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.rvs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Random variates of given type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Location parameter (default=0).</p></li>
+<li><p><strong>size</strong> (<em>int</em><em> or </em><em>tuple of ints</em><em>, </em><em>optional</em>) – Defining number of random variates (Default is 1). Note that <cite>size</cite>
+has to be given as keyword, not as positional argument.</p></li>
+<li><p><strong>random_state</strong> ({None, int, <cite>numpy.random.Generator</cite>,) – <p><cite>numpy.random.RandomState</cite>}, optional</p>
+<p>If <cite>seed</cite> is None (or <cite>np.random</cite>), the <cite>numpy.random.RandomState</cite>
+singleton is used.
+If <cite>seed</cite> is an int, a new <code class="docutils literal notranslate"><span class="pre">RandomState</span></code> instance is used,
+seeded with <cite>seed</cite>.
+If <cite>seed</cite> is already a <code class="docutils literal notranslate"><span class="pre">Generator</span></code> or <code class="docutils literal notranslate"><span class="pre">RandomState</span></code> instance
+then that instance is used.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>rvs</strong> – Random variates of given <cite>size</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray or scalar</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.sf">
+<span class="sig-name descname"><span class="pre">sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Survival function (1 - <cite>cdf</cite>) at k of the given RV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>array_like</em>) – Quantiles.</p></li>
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Location parameter (default=0).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sf</strong> – Survival function evaluated at k.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.stats">
+<span class="sig-name descname"><span class="pre">stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Some statistics of the given RV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – location parameter (default=0)</p></li>
+<li><p><strong>scale</strong> (<em>array_like</em><em>, </em><em>optional</em><em> (</em><em>continuous RVs only</em><em>)</em>) – scale parameter (default=1)</p></li>
+<li><p><strong>moments</strong> (<em>str</em><em>, </em><em>optional</em>) – composed of letters [‘mvsk’] defining which moments to compute:
+‘m’ = mean,
+‘v’ = variance,
+‘s’ = (Fisher’s) skew,
+‘k’ = (Fisher’s) kurtosis.
+(default is ‘mv’)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>stats</strong> – of requested moments.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.std">
+<span class="sig-name descname"><span class="pre">std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.std" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard deviation of the distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – location parameter (default=0)</p></li>
+<li><p><strong>scale</strong> (<em>array_like</em><em>, </em><em>optional</em>) – scale parameter (default=1)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>std</strong> – standard deviation of the distribution</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.support">
+<span class="sig-name descname"><span class="pre">support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.support" title="Permalink to this definition">¶</a></dt>
+<dd><p>Support of the distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information).</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – location parameter, Default is 0.</p></li>
+<li><p><strong>scale</strong> (<em>array_like</em><em>, </em><em>optional</em>) – scale parameter, Default is 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>a, b</strong> – end-points of the distribution’s support.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyGPB.GPB.var">
+<span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyGPB.GPB.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance of the distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg1</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>arg2</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>arg3</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>...</strong> (<em>array_like</em>) – The shape parameter(s) for the distribution (see docstring of the
+instance object for more information)</p></li>
+<li><p><strong>loc</strong> (<em>array_like</em><em>, </em><em>optional</em>) – location parameter (default=0)</p></li>
+<li><p><strong>scale</strong> (<em>array_like</em><em>, </em><em>optional</em>) – scale parameter (default=1)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>var</strong> – the variance of the distribution</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="LFGPB.html" class="btn btn-neutral float-right" title="LFGPB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to pyGPB’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Mark Rotchell.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
